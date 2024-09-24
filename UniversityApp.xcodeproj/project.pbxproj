@@ -16,6 +16,16 @@
 		824267382CA1884B00527CD9 /* UniversityAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824267372CA1884B00527CD9 /* UniversityAppTests.swift */; };
 		824267422CA1884B00527CD9 /* UniversityAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824267412CA1884B00527CD9 /* UniversityAppUITests.swift */; };
 		824267442CA1884B00527CD9 /* UniversityAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824267432CA1884B00527CD9 /* UniversityAppUITestsLaunchTests.swift */; };
+		82CAC2292CA2A83A009C88D4 /* UniversityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAC2282CA2A83A009C88D4 /* UniversityListViewController.swift */; };
+		82CAC22D2CA2A956009C88D4 /* AvailableCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAC22C2CA2A956009C88D4 /* AvailableCountry.swift */; };
+		82CAC22F2CA2B1B6009C88D4 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAC22E2CA2B1B6009C88D4 /* Repository.swift */; };
+		82CAC2312CA2B234009C88D4 /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAC2302CA2B234009C88D4 /* University.swift */; };
+		82CAC2332CA2B512009C88D4 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAC2322CA2B512009C88D4 /* Country.swift */; };
+		82CAC2362CA2B71C009C88D4 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAC2352CA2B71C009C88D4 /* Comment.swift */; };
+		82CAC2392CA2B816009C88D4 /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAC2382CA2B816009C88D4 /* Rate.swift */; };
+		82CAC23B2CA2B95F009C88D4 /* RepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAC23A2CA2B95F009C88D4 /* RepositoryImpl.swift */; };
+		82CAC23D2CA2B9C5009C88D4 /* UniversityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAC23C2CA2B9C5009C88D4 /* UniversityModel.swift */; };
+		82CAC2402CA2BA96009C88D4 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAC23F2CA2BA96009C88D4 /* CommentModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +59,16 @@
 		8242673D2CA1884B00527CD9 /* UniversityAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniversityAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		824267412CA1884B00527CD9 /* UniversityAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityAppUITests.swift; sourceTree = "<group>"; };
 		824267432CA1884B00527CD9 /* UniversityAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		82CAC2282CA2A83A009C88D4 /* UniversityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityListViewController.swift; sourceTree = "<group>"; };
+		82CAC22C2CA2A956009C88D4 /* AvailableCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCountry.swift; sourceTree = "<group>"; };
+		82CAC22E2CA2B1B6009C88D4 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		82CAC2302CA2B234009C88D4 /* University.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
+		82CAC2322CA2B512009C88D4 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		82CAC2352CA2B71C009C88D4 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		82CAC2382CA2B816009C88D4 /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
+		82CAC23A2CA2B95F009C88D4 /* RepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryImpl.swift; sourceTree = "<group>"; };
+		82CAC23C2CA2B9C5009C88D4 /* UniversityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityModel.swift; sourceTree = "<group>"; };
+		82CAC23F2CA2BA96009C88D4 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +119,12 @@
 		8242671F2CA1884900527CD9 /* UniversityApp */ = {
 			isa = PBXGroup;
 			children = (
+				82CAC22B2CA2A937009C88D4 /* domain */,
+				82CAC22A2CA2A92A009C88D4 /* data */,
+				82CAC2272CA2A6BC009C88D4 /* ui */,
 				824267202CA1884900527CD9 /* AppDelegate.swift */,
 				824267222CA1884900527CD9 /* SceneDelegate.swift */,
-				824267242CA1884900527CD9 /* ViewController.swift */,
-				824267262CA1884900527CD9 /* Main.storyboard */,
 				824267292CA1884B00527CD9 /* Assets.xcassets */,
-				8242672B2CA1884B00527CD9 /* LaunchScreen.storyboard */,
 				8242672E2CA1884B00527CD9 /* Info.plist */,
 			);
 			path = UniversityApp;
@@ -125,6 +145,64 @@
 				824267432CA1884B00527CD9 /* UniversityAppUITestsLaunchTests.swift */,
 			);
 			path = UniversityAppUITests;
+			sourceTree = "<group>";
+		};
+		82CAC2272CA2A6BC009C88D4 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				8242672B2CA1884B00527CD9 /* LaunchScreen.storyboard */,
+				824267262CA1884900527CD9 /* Main.storyboard */,
+				824267242CA1884900527CD9 /* ViewController.swift */,
+				82CAC2282CA2A83A009C88D4 /* UniversityListViewController.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		82CAC22A2CA2A92A009C88D4 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				82CAC23E2CA2BA82009C88D4 /* models */,
+				82CAC23A2CA2B95F009C88D4 /* RepositoryImpl.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		82CAC22B2CA2A937009C88D4 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				82CAC2372CA2B78D009C88D4 /* models */,
+				82CAC2342CA2B6FA009C88D4 /* entities */,
+				82CAC22E2CA2B1B6009C88D4 /* Repository.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		82CAC2342CA2B6FA009C88D4 /* entities */ = {
+			isa = PBXGroup;
+			children = (
+				82CAC2302CA2B234009C88D4 /* University.swift */,
+				82CAC2322CA2B512009C88D4 /* Country.swift */,
+				82CAC2352CA2B71C009C88D4 /* Comment.swift */,
+			);
+			path = entities;
+			sourceTree = "<group>";
+		};
+		82CAC2372CA2B78D009C88D4 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				82CAC22C2CA2A956009C88D4 /* AvailableCountry.swift */,
+				82CAC2382CA2B816009C88D4 /* Rate.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		82CAC23E2CA2BA82009C88D4 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				82CAC23C2CA2B9C5009C88D4 /* UniversityModel.swift */,
+				82CAC23F2CA2BA96009C88D4 /* CommentModel.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +338,17 @@
 			files = (
 				824267252CA1884900527CD9 /* ViewController.swift in Sources */,
 				824267212CA1884900527CD9 /* AppDelegate.swift in Sources */,
+				82CAC2292CA2A83A009C88D4 /* UniversityListViewController.swift in Sources */,
+				82CAC2392CA2B816009C88D4 /* Rate.swift in Sources */,
+				82CAC22D2CA2A956009C88D4 /* AvailableCountry.swift in Sources */,
+				82CAC2402CA2BA96009C88D4 /* CommentModel.swift in Sources */,
+				82CAC2332CA2B512009C88D4 /* Country.swift in Sources */,
+				82CAC23B2CA2B95F009C88D4 /* RepositoryImpl.swift in Sources */,
+				82CAC23D2CA2B9C5009C88D4 /* UniversityModel.swift in Sources */,
 				824267232CA1884900527CD9 /* SceneDelegate.swift in Sources */,
+				82CAC22F2CA2B1B6009C88D4 /* Repository.swift in Sources */,
+				82CAC2362CA2B71C009C88D4 /* Comment.swift in Sources */,
+				82CAC2312CA2B234009C88D4 /* University.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
