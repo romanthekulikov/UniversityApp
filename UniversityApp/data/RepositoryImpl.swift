@@ -13,8 +13,8 @@ class RepositoryImpl : Repository {
         return [UniversityModel()]
     }
     
-    func getAvailableCountries() -> [String] {
-        return []
+    func getAvailableCountries() -> [AvailableCountry] {
+        return AvailableCountry.allCases
     }
     
     func getComments(university: University) -> [Comment] {

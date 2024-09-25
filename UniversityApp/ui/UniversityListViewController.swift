@@ -7,8 +7,8 @@
 
 import UIKit
 
-class UniversityListViewController: UIViewController {
-    let selectedCountry: AvailableCountry? = nil
+class UniversityListViewController: BaseViewController {
+    var selectedCountry: AvailableCountry? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()

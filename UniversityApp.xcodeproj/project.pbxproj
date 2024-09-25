@@ -26,6 +26,9 @@
 		82CAC23B2CA2B95F009C88D4 /* RepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAC23A2CA2B95F009C88D4 /* RepositoryImpl.swift */; };
 		82CAC23D2CA2B9C5009C88D4 /* UniversityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAC23C2CA2B9C5009C88D4 /* UniversityModel.swift */; };
 		82CAC2402CA2BA96009C88D4 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAC23F2CA2BA96009C88D4 /* CommentModel.swift */; };
+		82E9C3392CA4369400E02067 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9C3382CA4369400E02067 /* Injector.swift */; };
+		82E9C33C2CA4382300E02067 /* AppInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9C33B2CA4382300E02067 /* AppInjector.swift */; };
+		82E9C33F2CA43E2100E02067 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9C33E2CA43E2100E02067 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		82CAC23A2CA2B95F009C88D4 /* RepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryImpl.swift; sourceTree = "<group>"; };
 		82CAC23C2CA2B9C5009C88D4 /* UniversityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityModel.swift; sourceTree = "<group>"; };
 		82CAC23F2CA2BA96009C88D4 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		82E9C3382CA4369400E02067 /* Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
+		82E9C33B2CA4382300E02067 /* AppInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInjector.swift; sourceTree = "<group>"; };
+		82E9C33E2CA43E2100E02067 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,7 @@
 				824267222CA1884900527CD9 /* SceneDelegate.swift */,
 				824267292CA1884B00527CD9 /* Assets.xcassets */,
 				8242672E2CA1884B00527CD9 /* Info.plist */,
+				82E9C33B2CA4382300E02067 /* AppInjector.swift */,
 			);
 			path = UniversityApp;
 			sourceTree = "<group>";
@@ -150,6 +157,7 @@
 		82CAC2272CA2A6BC009C88D4 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				82E9C33D2CA43E0200E02067 /* base */,
 				8242672B2CA1884B00527CD9 /* LaunchScreen.storyboard */,
 				824267262CA1884900527CD9 /* Main.storyboard */,
 				824267242CA1884900527CD9 /* ViewController.swift */,
@@ -170,6 +178,8 @@
 		82CAC22B2CA2A937009C88D4 /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				82E9C3372CA4365100E02067 /* di */,
+				82E9C3362CA4347400E02067 /* use_cases */,
 				82CAC2372CA2B78D009C88D4 /* models */,
 				82CAC2342CA2B6FA009C88D4 /* entities */,
 				82CAC22E2CA2B1B6009C88D4 /* Repository.swift */,
@@ -203,6 +213,29 @@
 				82CAC23F2CA2BA96009C88D4 /* CommentModel.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		82E9C3362CA4347400E02067 /* use_cases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = use_cases;
+			sourceTree = "<group>";
+		};
+		82E9C3372CA4365100E02067 /* di */ = {
+			isa = PBXGroup;
+			children = (
+				82E9C3382CA4369400E02067 /* Injector.swift */,
+			);
+			path = di;
+			sourceTree = "<group>";
+		};
+		82E9C33D2CA43E0200E02067 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				82E9C33E2CA43E2100E02067 /* BaseViewController.swift */,
+			);
+			path = base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +374,7 @@
 				82CAC2292CA2A83A009C88D4 /* UniversityListViewController.swift in Sources */,
 				82CAC2392CA2B816009C88D4 /* Rate.swift in Sources */,
 				82CAC22D2CA2A956009C88D4 /* AvailableCountry.swift in Sources */,
+				82E9C3392CA4369400E02067 /* Injector.swift in Sources */,
 				82CAC2402CA2BA96009C88D4 /* CommentModel.swift in Sources */,
 				82CAC2332CA2B512009C88D4 /* Country.swift in Sources */,
 				82CAC23B2CA2B95F009C88D4 /* RepositoryImpl.swift in Sources */,
@@ -348,6 +382,8 @@
 				824267232CA1884900527CD9 /* SceneDelegate.swift in Sources */,
 				82CAC22F2CA2B1B6009C88D4 /* Repository.swift in Sources */,
 				82CAC2362CA2B71C009C88D4 /* Comment.swift in Sources */,
+				82E9C33F2CA43E2100E02067 /* BaseViewController.swift in Sources */,
+				82E9C33C2CA4382300E02067 /* AppInjector.swift in Sources */,
 				82CAC2312CA2B234009C88D4 /* University.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

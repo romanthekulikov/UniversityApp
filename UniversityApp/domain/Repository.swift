@@ -9,7 +9,7 @@ import Foundation
 
 protocol Repository {
     func getUniversity(country: String) -> [University]
-    func getAvailableCountries() -> [String]
+    func getAvailableCountries() -> [AvailableCountry]
     func getComments(university: University) -> [Comment]
     func createComment(comment: Comment)
     
