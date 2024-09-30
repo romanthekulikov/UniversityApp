@@ -7,7 +7,9 @@
 
 import UIKit
 
-class UniversityListViewController: BaseViewController {
+class UniversityListViewController: BaseViewController, NavigativeController {
+    var navigationName: String = "UniversityList"
+    
     var selectedCountry: AvailableCountry? = nil
 
     override func viewDidLoad() {

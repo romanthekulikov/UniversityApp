@@ -25,13 +25,10 @@ class ViewController : BaseViewController, UIPickerViewDelegate, UIPickerViewDat
     }
     
     @IBAction func onSelectClick(_ sender: UIButton) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "UniversityList") as! UniversityListViewController
-//        vc.modalPresentationStyle = .fullScreen
-//        vc.title = selectedCountry?.rawValue
-//        self.navigationController?.present(vc, animated: true)
-        
-        navigate<>(from: "", to: "", additional: {})
+        navigate(UniversityListViewController.self, from: "Main", to: "UniversityList") { controller in
+            controller.selectedCountry = selectedCountry
+            controller.title = selectedCountry?.rawValue
+        }
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
