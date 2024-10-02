@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Promises
 
 protocol Repository {
-    func getUniversity(country: String) -> [University]
+    func getUniversity(country: AvailableCountry) -> Promise<[University]?>
     func getAvailableCountries() -> [AvailableCountry]
     func getComments(university: University) -> [Comment]
     func createComment(comment: Comment)
