@@ -26,7 +26,7 @@ class ViewController : BaseViewController, UIPickerViewDelegate, UIPickerViewDat
     
     @IBAction func onSelectClick(_ sender: UIButton) {
         navigate(UniversityListViewController.self, from: "Main", to: "UniversityList") { controller in
-            controller.selectedCountry = selectedCountry
+            controller.selectedCountry = selectedCountry ?? AvailableCountry.turkey
             controller.title = selectedCountry?.rawValue
         }
     }

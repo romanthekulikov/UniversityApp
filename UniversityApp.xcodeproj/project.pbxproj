@@ -28,6 +28,7 @@
 		82CAC23B2CA2B95F009C88D4 /* RepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAC23A2CA2B95F009C88D4 /* RepositoryImpl.swift */; };
 		82CAC23D2CA2B9C5009C88D4 /* UniversityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAC23C2CA2B9C5009C88D4 /* UniversityModel.swift */; };
 		82CAC2402CA2BA96009C88D4 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAC23F2CA2BA96009C88D4 /* CommentModel.swift */; };
+		82D282D62CAEB64C0049F2A5 /* UniversityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D282D52CAEB64C0049F2A5 /* UniversityViewController.swift */; };
 		82E9C3392CA4369400E02067 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9C3382CA4369400E02067 /* Injector.swift */; };
 		82E9C33C2CA4382300E02067 /* AppInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9C33B2CA4382300E02067 /* AppInjector.swift */; };
 		82E9C33F2CA43E2100E02067 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9C33E2CA43E2100E02067 /* BaseViewController.swift */; };
@@ -77,6 +78,7 @@
 		82CAC23A2CA2B95F009C88D4 /* RepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryImpl.swift; sourceTree = "<group>"; };
 		82CAC23C2CA2B9C5009C88D4 /* UniversityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityModel.swift; sourceTree = "<group>"; };
 		82CAC23F2CA2BA96009C88D4 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		82D282D52CAEB64C0049F2A5 /* UniversityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UniversityViewController.swift; path = UniversityApp/ui/UniversityViewController.swift; sourceTree = SOURCE_ROOT; };
 		82E9C3382CA4369400E02067 /* Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
 		82E9C33B2CA4382300E02067 /* AppInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInjector.swift; sourceTree = "<group>"; };
 		82E9C33E2CA43E2100E02067 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		82CAC2272CA2A6BC009C88D4 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				82D282D52CAEB64C0049F2A5 /* UniversityViewController.swift */,
 				82E9C33D2CA43E0200E02067 /* base */,
 				8242672B2CA1884B00527CD9 /* LaunchScreen.storyboard */,
 				824267262CA1884900527CD9 /* Main.storyboard */,
@@ -464,6 +467,7 @@
 				82CAC2362CA2B71C009C88D4 /* Comment.swift in Sources */,
 				82E9C33F2CA43E2100E02067 /* BaseViewController.swift in Sources */,
 				82E9C33C2CA4382300E02067 /* AppInjector.swift in Sources */,
+				82D282D62CAEB64C0049F2A5 /* UniversityViewController.swift in Sources */,
 				82CAC2312CA2B234009C88D4 /* University.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

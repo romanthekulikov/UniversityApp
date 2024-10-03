@@ -13,19 +13,23 @@ import Promises
 
 
 class RepositoryImpl : Repository {
+    private let universityClient = MoyaProvider<MoyaUniversityClient>()
+    
     func getUniversity(country: AvailableCountry) -> Promise<[University]?> {
         let promise = Promise<[University]?>() { fulfill, reject in
-            let provider = MoyaProvider<MoyaUniversityClient>()
-            provider.request(.getUniversity(country: country)) { result in
+            self.universityClient.request(.getUniversity(country: country)) { result in
                 switch result {
                     case .success(let response):
-                        let universityJson = try! response.mapArray(UniversityModel.self)
+                        let universityJson = try? response.mapArray(UniversityModel.self)
                         fulfill(universityJson)
+
+                    case .failure(let error):
+                        reject(error)
                     
-                    case .failure(_):
-                        fulfill(nil)
                 }
+                
             }
+            
         }
 
         return promise

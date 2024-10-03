@@ -11,7 +11,7 @@ import Moya
 enum MoyaUniversityClient {
     case getUniversity(country: AvailableCountry)
     
-
+    
 }
 
 extension MoyaUniversityClient: TargetType {
@@ -25,8 +25,8 @@ extension MoyaUniversityClient: TargetType {
     
     var path: String {
         switch self {
-        case .getUniversity(let country):
-            return "/search?\(country)"
+        case .getUniversity(_):
+            return "/search"
         }
     }
     
@@ -35,7 +35,10 @@ extension MoyaUniversityClient: TargetType {
     }
     
     var task: Moya.Task {
-        return .requestPlain
+        switch self {
+            case .getUniversity(let country):
+                return .requestParameters(parameters: ["country" : country.rawValue], encoding: URLEncoding.queryString)
+        }
     }
     
     var headers: [String : String]? {

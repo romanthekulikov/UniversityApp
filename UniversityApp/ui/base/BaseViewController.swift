@@ -18,7 +18,7 @@ class BaseViewController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: to) as! T
         additional(vc)
         vc.modalPresentationStyle = .fullScreen
-        self.navigationController?.present(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: false)
     }
 }
 
