@@ -11,7 +11,7 @@ import Promises
 protocol Repository {
     func getUniversity(country: AvailableCountry) -> Promise<[University]?>
     func getAvailableCountries() -> [AvailableCountry]
-    func getComments(university: University) -> [Comment]
+    func getComments(university: University) -> Promise<[Comment]>
     func createComment(comment: Comment)
     
 }

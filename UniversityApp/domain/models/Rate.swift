@@ -8,7 +8,9 @@
 import Foundation
 
 
-enum Rate : Int {
+enum Rate : Int, DBAdapter {
+    typealias T = Rate
+    
     case one = 1
     case two = 2
     case three = 3
@@ -16,4 +18,39 @@ enum Rate : Int {
     case five = 5
     case nothing = -1
     
+    
+    func toString() -> String {
+        switch self {
+        case .one:
+            return "one"
+        case .two:
+            return "two"
+        case .three:
+            return "three"
+        case .four:
+            return "four"
+        case .five:
+            return "five"
+        case .nothing:
+            return "nothing"
+        }
+    
+    }
+    
+    func fromString(obj: String) -> Rate {
+        switch obj {
+        case "one":
+            return .one
+        case "two":
+            return .two
+        case "three":
+            return .three
+        case "four":
+            return .four
+        case "five":
+            return .five
+        default:
+            return .nothing
+        }
+    }
 }

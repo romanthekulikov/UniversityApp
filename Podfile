@@ -1,10 +1,14 @@
 platform :ios, '16.2'
 
+use_frameworks!
+
 target 'UniversityApp' do
+	inherit! :search_paths
+
 	pod 'PromisesSwift'
 	pod 'PromisesObjC'
 	pod 'Moya-ObjectMapper', '~> 2.9'
-	
+	pod 'RealmSwift', '~> 10.33.0'
 end
 
 post_install do |installer|

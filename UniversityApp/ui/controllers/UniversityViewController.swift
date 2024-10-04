@@ -22,6 +22,8 @@ class UniversityViewController: BaseViewController, NavigativeController {
     
     var university: University? = nil
     
+    private let webHelper = WebHelper()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,12 +38,26 @@ class UniversityViewController: BaseViewController, NavigativeController {
     
 
     @IBAction func onReviewsButtonClick(_ sender: Any) {
-        
+        navigate(ReviewsViewController.self, from: "Main", to: "Reviews") { controller in
+            controller.university = self.university
+        }
     }
     
     @IBAction func onLinkClick(_ sender: Any) {
+        webHelper.openLink(link: university?.links[0] ?? "")
     }
     
     @IBAction func onShareButtonClick(_ sender: Any) {
+        share()
+    }
+    
+    private func share() {
+        guard let links = university?.links else { return }
+        if links.isEmpty { return }
+        
+        let text = ["Hello, check this university!\nName: \(university?.name ?? "")\nLink: \(links[0])"]
+        
+        let ac = UIActivityViewController(activityItems: text, applicationActivities: [])
+        present(ac, animated: true)
     }
 }

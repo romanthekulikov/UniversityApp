@@ -10,10 +10,12 @@ import Moya
 import ObjectMapper
 import Moya_ObjectMapper
 import Promises
+import RealmSwift
 
 
 class RepositoryImpl : Repository {
     private let universityClient = MoyaProvider<MoyaUniversityClient>()
+    private let realm = try? Realm()
     
     func getUniversity(country: AvailableCountry) -> Promise<[University]?> {
         let promise = Promise<[University]?>() { fulfill, reject in
@@ -39,8 +41,20 @@ class RepositoryImpl : Repository {
         return AvailableCountry.allCases
     }
     
-    func getComments(university: University) -> [Comment] {
-        return [CommentModel()]
+    func getComments(university: University) -> Promise<[Comment]> {
+        let promise = Promise<[Comment]>() { fulfill, reject in
+            if self.realm != nil {
+                let predicate = NSPredicate(format: "universityName = %@", university.name)
+                let comments = self.realm!.objects(CommentEntity.self).filter(predicate).shuffled()
+                fulfill(comments)
+            } else {
+                fulfill([])
+            }
+            
+            
+        }
+        
+        return promise
     }
     
     func createComment(comment: Comment) {
