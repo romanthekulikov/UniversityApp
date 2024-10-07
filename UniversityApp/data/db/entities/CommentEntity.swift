@@ -9,23 +9,9 @@ import Foundation
 import RealmSwift
 
 class CommentEntity : Object, Comment {
+    @Persisted var universityName: String
+    @Persisted var rate: Rate
+    @Persisted var text: String
     
-    @objc dynamic var universityName: String = ""
-    @objc dynamic internal var _rate: String {
-        get {
-            return rate.toString()
-        }
-    }
-    @objc dynamic var text: String = ""
-    
-    var rate: Rate {
-        get {
-            return self.rate.fromString(obj: _rate)
-        }
-    }
-    
-    override static func ignoredProperties() -> [String] {
-            return ["rate"]
-    }
     
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3E94A468800669EB90F33EF5 /* Pods_UniversityApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 791A497FD6D1A19554890875 /* Pods_UniversityApp.framework */; };
+		8212A2B72CB3DF420021162A /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8212A2B62CB3DF420021162A /* CommentViewController.swift */; };
+		8212A2BA2CB405410021162A /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8212A2B92CB405410021162A /* CommentCell.swift */; };
 		824267212CA1884900527CD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824267202CA1884900527CD9 /* AppDelegate.swift */; };
 		824267232CA1884900527CD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824267222CA1884900527CD9 /* SceneDelegate.swift */; };
 		824267252CA1884900527CD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824267242CA1884900527CD9 /* ViewController.swift */; };
@@ -58,6 +60,8 @@
 		12A4DECB9B2161FD047219D7 /* Pods-UniversityApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniversityApp.debug.xcconfig"; path = "Target Support Files/Pods-UniversityApp/Pods-UniversityApp.debug.xcconfig"; sourceTree = "<group>"; };
 		1712FE9F5709DCB776352692 /* Pods-UniversityApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniversityApp.release.xcconfig"; path = "Target Support Files/Pods-UniversityApp/Pods-UniversityApp.release.xcconfig"; sourceTree = "<group>"; };
 		791A497FD6D1A19554890875 /* Pods_UniversityApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UniversityApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8212A2B62CB3DF420021162A /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		8212A2B92CB405410021162A /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		8242671D2CA1884900527CD9 /* UniversityApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversityApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		824267202CA1884900527CD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		824267222CA1884900527CD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +127,14 @@
 				791A497FD6D1A19554890875 /* Pods_UniversityApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8212A2B82CB404F30021162A /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				8212A2B92CB405410021162A /* CommentCell.swift */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 		824267142CA1884900527CD9 = {
@@ -191,6 +203,7 @@
 		82CAC2272CA2A6BC009C88D4 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				8212A2B82CB404F30021162A /* cells */,
 				82FB74432CAFE8AE00E95558 /* controllers */,
 				82FB74412CAFE85A00E95558 /* WebHelper.swift */,
 				8242672B2CA1884B00527CD9 /* LaunchScreen.storyboard */,
@@ -264,6 +277,7 @@
 				82D282D52CAEB64C0049F2A5 /* UniversityViewController.swift */,
 				82E9C33E2CA43E2100E02067 /* BaseViewController.swift */,
 				82FB74442CAFF28400E95558 /* ReviewsViewController.swift */,
+				8212A2B62CB3DF420021162A /* CommentViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -478,6 +492,7 @@
 				82FB74452CAFF28400E95558 /* ReviewsViewController.swift in Sources */,
 				82E9C3392CA4369400E02067 /* Injector.swift in Sources */,
 				82CAC2402CA2BA96009C88D4 /* CommentEntity.swift in Sources */,
+				8212A2B72CB3DF420021162A /* CommentViewController.swift in Sources */,
 				82CAC2332CA2B512009C88D4 /* Country.swift in Sources */,
 				82CAC23B2CA2B95F009C88D4 /* RepositoryImpl.swift in Sources */,
 				82CAC23D2CA2B9C5009C88D4 /* UniversityModel.swift in Sources */,
@@ -489,6 +504,7 @@
 				82E9C33C2CA4382300E02067 /* AppInjector.swift in Sources */,
 				82D282D62CAEB64C0049F2A5 /* UniversityViewController.swift in Sources */,
 				82CAC2312CA2B234009C88D4 /* University.swift in Sources */,
+				8212A2BA2CB405410021162A /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

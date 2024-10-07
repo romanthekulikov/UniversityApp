@@ -8,7 +8,7 @@
 import UIKit
 
 class UniversityListViewController: BaseViewController, NavigativeController, UITableViewDelegate, UITableViewDataSource {
-    var navigationName: String = "UniversityList"
+    static var navigationName: String = "UniversityList"
     
     var selectedCountry: AvailableCountry? = nil
     var repository: Repository? = nil
@@ -48,7 +48,7 @@ class UniversityListViewController: BaseViewController, NavigativeController, UI
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(university?[indexPath.row].name ?? "")
-        navigate(UniversityViewController.self, from: "Main", to: "University") { controller in
+        navigateTo(UniversityViewController.self) { controller in
             controller.university = university?[indexPath.row]
         }
     }

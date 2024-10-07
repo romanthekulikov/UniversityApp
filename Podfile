@@ -9,6 +9,7 @@ target 'UniversityApp' do
 	pod 'PromisesObjC'
 	pod 'Moya-ObjectMapper', '~> 2.9'
 	pod 'RealmSwift', '~> 10.33.0'
+	pod 'Toast-Swift', '~> 5.1.1'
 end
 
 post_install do |installer|

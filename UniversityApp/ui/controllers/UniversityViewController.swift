@@ -8,7 +8,7 @@
 import UIKit
 
 class UniversityViewController: BaseViewController, NavigativeController {
-    var navigationName: String = "University"
+    static var navigationName: String = "University"
     
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -38,7 +38,7 @@ class UniversityViewController: BaseViewController, NavigativeController {
     
 
     @IBAction func onReviewsButtonClick(_ sender: Any) {
-        navigate(ReviewsViewController.self, from: "Main", to: "Reviews") { controller in
+        navigateTo(ReviewsViewController.self) { controller in
             controller.university = self.university
         }
     }

@@ -12,6 +12,6 @@ protocol Repository {
     func getUniversity(country: AvailableCountry) -> Promise<[University]?>
     func getAvailableCountries() -> [AvailableCountry]
     func getComments(university: University) -> Promise<[Comment]>
-    func createComment(comment: Comment)
+    func createComment(comment: CommentEntity)
     
 }

@@ -15,7 +15,6 @@ import RealmSwift
 
 class RepositoryImpl : Repository {
     private let universityClient = MoyaProvider<MoyaUniversityClient>()
-    private let realm = try? Realm()
     
     func getUniversity(country: AvailableCountry) -> Promise<[University]?> {
         let promise = Promise<[University]?>() { fulfill, reject in
@@ -43,9 +42,10 @@ class RepositoryImpl : Repository {
     
     func getComments(university: University) -> Promise<[Comment]> {
         let promise = Promise<[Comment]>() { fulfill, reject in
-            if self.realm != nil {
+            let realm = try! Realm()
+            if realm != nil {
                 let predicate = NSPredicate(format: "universityName = %@", university.name)
-                let comments = self.realm!.objects(CommentEntity.self).filter(predicate).shuffled()
+                let comments = realm.objects(CommentEntity.self).filter(predicate).shuffled()
                 fulfill(comments)
             } else {
                 fulfill([])
@@ -57,8 +57,11 @@ class RepositoryImpl : Repository {
         return promise
     }
     
-    func createComment(comment: Comment) {
-        // nothing
+    func createComment(comment: CommentEntity) {
+        let realm = try! Realm()
+        try? realm.write {
+            realm.add(comment)
+        }
     }
     
     
