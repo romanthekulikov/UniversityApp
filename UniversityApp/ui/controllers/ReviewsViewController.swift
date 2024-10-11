@@ -15,14 +15,12 @@ class ReviewsViewController: BaseViewController, NavigativeController, UITableVi
     
     @IBOutlet weak var commentsTableView: UITableView!
     
+    
     @IBOutlet weak var universityNameLabel: UILabel!
     
     private var commentList: [Comment]? = nil
     
     override func viewDidLoad() {
-        //commentsTableView.register(CommentCell.nib, forCellReuseIdentifier: CommentCell.identifier)
-        //commentsTableView.estimatedRowHeight = 100
-        commentsTableView.rowHeight = UITableView.automaticDimension
         super.viewDidLoad()
         repository = injector.repository
         universityNameLabel.text = university?.name ?? ""
@@ -50,13 +48,16 @@ class ReviewsViewController: BaseViewController, NavigativeController, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 80
+        
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: CommentCell.identifier, for: indexPath) as! CommentCell
-        
-        try? cell.configure(commentList![indexPath.row])
-        
-        cell.onArrowClick = {
-            self.commentsTableView.reloadRows(at: [indexPath], with: .automatic)
-        }
+        cell.configure(commentList![indexPath.item])
+        cell.commentTextView.isHidden = !cell.commentTextView.isHidden
         
         return cell
     }
@@ -70,35 +71,41 @@ class CommentCell: UITableViewCell {
     
     @IBOutlet weak var commentTextLabel: UILabel!
     
-    @IBOutlet weak var commentTextView: UITextView!
-    
-    var onArrowClick: (() -> ())!
+    @IBOutlet weak var commentTextView: UITextView! {
+        didSet {
+            commentTextView.isHidden = true
+        }
+    }
     
     
     private var textShowed: Bool = false
     
-    // Set the identifier for the custom cell
     static let identifier = "CommentCell"
 
-    // Returning the xib file after instantiating it
+    
     static var nib: UINib {
-           return UINib(nibName: String(describing: self), bundle: nil)
+        return UINib(nibName: String(describing: self), bundle: nil)
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(arrowTapped(tapGestureRecognizer:)))
-//
-//        arrowIcon.addGestureRecognizer(tapGestureRecognizer)
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onArraowClick(tapGestureRecognizer:)))
+        arrowIcon.isUserInteractionEnabled = true
+        arrowIcon.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc func onArraowClick(tapGestureRecognizer: UITapGestureRecognizer){
+        textShowed = !textShowed
+        self.commentTextView.isHidden = !self.textShowed
+
+        arrowIcon.transform = !textShowed ? CGAffineTransform(rotationAngle: .pi / 2) : .identity
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        textShowed = !textShowed
-        commentTextView.isHidden = !textShowed
-        onArrowClick()
     }
+    
+    
     
     func configure(_ comment: Comment) {
         ratelabel.text = String(comment.rate.rawValue)
@@ -106,12 +113,6 @@ class CommentCell: UITableViewCell {
         commentTextLabel.text = comment.text
         
     }
-//    
-//    @objc func arrowTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-//        textShowed = !textShowed
-//        commentTextView.isHidden = !textShowed
-//        onArrowClick()
-//    }
     
     
 }
