@@ -14,6 +14,7 @@ import RealmSwift
 
 
 class RepositoryImpl : Repository {
+    
     private let universityClient = MoyaProvider<MoyaUniversityClient>()
     
     func getUniversity(country: AvailableCountry) -> Promise<[University]?> {
@@ -41,20 +42,13 @@ class RepositoryImpl : Repository {
     }
     
     func getComments(university: University) -> Promise<[Comment]> {
-        let promise = Promise<[Comment]>() { fulfill, reject in
+        return Promise<[Comment]>() { fulfill, reject in
             let realm = try! Realm()
-            if realm != nil {
-                let predicate = NSPredicate(format: "universityName = %@", university.name)
-                let comments = realm.objects(CommentEntity.self).filter(predicate).shuffled()
-                fulfill(comments)
-            } else {
-                fulfill([])
-            }
-            
+            let predicate = NSPredicate(format: "universityName = %@", university.name)
+            let comments = realm.objects(CommentEntity.self).filter(predicate).shuffled()
+            fulfill(comments)
             
         }
-        
-        return promise
     }
     
     func createComment(comment: CommentEntity) {
@@ -64,5 +58,24 @@ class RepositoryImpl : Repository {
         }
     }
     
+    
+    func getMiddleRateUniversity(university: University) -> Promises.Promise<Double> {
+        return Promise<Double>() { fulfill, reject in
+            let realm = try! Realm()
+            let predicate = NSPredicate(format: "universityName = %@", university.name)
+            let comments = realm.objects(CommentEntity.self).filter(predicate).shuffled()
+            var rateSum = 0.0
+            for comment in comments {
+                rateSum += Double(comment.rate.rawValue)
+            }
+            let count = Double(comments.count)
+            if count != 0 {
+                fulfill(Double(rateSum / count))
+            } else {
+                fulfill(0)
+            }
+            
+        }
+    }
     
 }

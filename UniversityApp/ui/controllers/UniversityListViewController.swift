@@ -43,6 +43,7 @@ class UniversityListViewController: BaseViewController, NavigativeController, UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "university", for: indexPath)
         cell.textLabel?.text = university?[indexPath.row].name ?? ""
+        
         return cell
     }
     

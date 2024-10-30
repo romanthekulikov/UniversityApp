@@ -18,9 +18,5 @@ class AppInjector : Injector {
         return injectorInstance!
     }
     
-    private init() {}
-    
-    
     var repository: Repository = RepositoryImpl()
-    
 }

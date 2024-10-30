@@ -13,7 +13,6 @@ class BaseViewController: UIViewController {
     var injector: Injector = AppInjector.instance
     
     func navigateTo<T: BaseViewController>(_ dump: T.Type, additional: (T) -> Void) where T: NavigativeController {
-        // В планах брать имя сториборда для реализации перехода из контроллеров при помощи реализации ими протокола NavigativeController
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: T.navigationName) as! T
         additional(vc)

@@ -20,9 +20,23 @@ class UniversityViewController: BaseViewController, NavigativeController {
     
     @IBOutlet weak var linkButton: UIButton!
     
+    @IBOutlet weak var middleRateLabel: UILabel!
+    
     var university: University? = nil
     
+    private var repository: Repository? = nil
+    
     private let webHelper = WebHelper()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        repository = injector.repository
+        
+        if university != nil {
+            repository?.getMiddleRateUniversity(university: university!).then { middleRate in
+                self.middleRateLabel.text = "Middle rate: \(String(format: "%.1f",  middleRate))"
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
